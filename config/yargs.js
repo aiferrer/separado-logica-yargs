@@ -1,4 +1,4 @@
-const args = require('yargs')
+const argv = require('yargs')
 .options('b', {
     alias: 'base',
     description: 'Es la base de la tabla de multiplicar',
@@ -12,8 +12,8 @@ const args = require('yargs')
     type: 'boolean',
     default: false
 })
-.check((args, options) => {
-    const base = args.b;
+.check((argv, options) => {
+    const base = argv.b;
     if (isNaN(base)) {
         throw new Error("La base debe ser un numero");
     }
@@ -24,4 +24,4 @@ const args = require('yargs')
 })
 .argv;
 
- module.exports = args;
+module.exports = argv;
